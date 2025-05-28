@@ -1,0 +1,15 @@
+
+<html>
+  <body>
+    <h2>Order List</h2>
+    <table border="1">
+      <thead><tr><th>Order ID</th><th>Customer</th><th>Phone</th><th>Address</th></tr></thead>
+      <tbody>
+        <%= for o <- @orders do %>
+          <tr><td><%= o.order_id %></td><td><%= o.customer_name %></td><td><%= o.phone %></td><td><%= o.address %></td></tr>
+        <% end %>
+      </tbody>
+    </table>
+    <form action="/export" method="post"><button type="submit">Export to CSV</button></form>
+  </body>
+</html>
